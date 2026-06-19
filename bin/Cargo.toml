@@ -1,0 +1,31 @@
+[package]
+name = "bin"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+robotics_lib = { registry = "kellnr" }
+worldgen_unwrap = { registry = "kellnr" }
+rustafariani_world_gen = { registry = "kellnr" }
+#worldgen_unwrap = { path = "../../WorldGen" }
+#robotics_lib = { path = "../../Robotic-Lib" }
+Visualizer = { path = "../" }
+image = "0.24.8"
+rand = "0.8.5"
+strum = "0.25.0"
+lazy_static = "1.4.0"
+noise = "0.8.2"
+rayon = "1.5.0"
+crossbeam-channel = "0.5.11"
+smallvec = "1.12.0"
+piston_window = "0.122.0"
+find_folder = "0.3"
+andrea_ai = { path = "../../robot_ai" }
+clap = { version = "4.4.18", features = ["derive"] }
+
+
+[dependencies.piston2d-graphics]
+version = "*"
+features = ["glyph_cache_rusttype"]

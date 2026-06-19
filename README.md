@@ -4,7 +4,7 @@
 
 This repository is presented as a portfolio project. The goal of this cleanup is to show the actual code and project structure clearly, without shipping generated build artifacts, editor metadata, or private machine-specific credentials.
 
-## What This Project Shows
+## Project contents
 
 - Real Rust application structure split between a reusable library crate and an executable crate
 - Concurrency with threads, channels, `Arc`, and `Mutex`
@@ -67,52 +67,3 @@ From the current implementation in [`bin/src/main.rs`](/C:/Users/giaco/Desktop/V
 - `V`: toggle the robot local view
 - `T`: toggle the text/HUD information
 - `Esc`: close the window
-
-## Important Build Notes
-
-This project is not a fully standalone public crate at the moment, and that is intentional to state clearly:
-
-- It depends on crates fetched from a private `kellnr` registry
-- It also references a local path dependency: `andrea_ai = { path = "../../robot_ai" }`
-- Because of those private/local dependencies, a fresh public clone may not compile without access to the original environment
-
-For portfolio purposes, the repository is still valuable because it shows:
-
-- code organization
-- rendering logic
-- synchronization patterns
-- integration style
-- project scale and complexity
-
-## Why The Repo Was Cleaned Up
-
-The original repository contained generated build output under `target/`, editor-specific project files, and machine-specific Cargo authentication details. Those files do not help a recruiter evaluate the code and make the repository unnecessarily large and noisy.
-
-This version keeps the focus on the source code and project intent.
-
-## Tech Stack
-
-- Rust 2021
-- `piston_window`
-- `robotics_lib`
-- `noise`
-- `image`
-- `rayon`
-- `crossbeam-channel`
-- `rodio`
-- `clap`
-
-## Honest Limitations
-
-- The project is tightly coupled to its original robotics ecosystem
-- Some dependencies are private or local-only
-- No extra refactor was done here to make the code more public-package-friendly, because the goal was to preserve the original implementation and only improve repository quality
-
-## Recruiter-Facing Summary
-
-If you are reviewing this repository as part of a portfolio, the strongest signals are:
-
-- the project is larger than a tutorial-sized app
-- the author worked with rendering, concurrency, and shared state
-- the code integrates simulation data into a usable visualization tool
-- the repository cleanup keeps attention on the real engineering work instead of generated output
